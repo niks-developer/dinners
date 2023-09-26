@@ -19,7 +19,7 @@ const showCarousel = (dinner) => {
         <h1>УЖИНЫ НА НЕДЕЛЮ</h1>
       </div>
        {dinners.map((dinner => {
-        const { id, day, nameFood, image, recipe } = dinner;
+        const { id, day, nameFood, image, recipe, showMore } = dinner;
       return (
         <div>
           <div key={id}>
@@ -30,9 +30,15 @@ const showCarousel = (dinner) => {
             <img src={image} alt="food" width="400px"/>
           </div>
           <div>
+            <div>
             <h4>рецепт</h4>
-            <button  onClick={()=> showCarousel(dinner)}> {showMore ? "show less" : "show more"} </button>
-            <Carousel recipe={recipe}/> 
+            </div>
+            <div>
+              <button onClick={()=> showCarousel(dinner)}>Показать</button>
+            </div>
+            <div>
+              <Carousel recipe={show && recipe}/> 
+            </div>
           </div>
          
         </div>
