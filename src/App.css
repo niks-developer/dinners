@@ -1,0 +1,20 @@
+/* стиль фона */
+#background {
+    z-index: -1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* backdround-attachment: scroll; */
+    background-image: url(/public/pictures/food-view.jpg);
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}

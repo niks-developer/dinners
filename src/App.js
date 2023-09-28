@@ -8,36 +8,34 @@ function App() {
 const [dinners, setDinners] = useState(data);
 const [show, setShow] = useState(false);
 
-const showCarousel = (dinner) => {
-  dinner.showMore =!dinner.showMore
-  setShow(!show)
-}
+// const showRecipeClick = (recipe) => {
+//   recipe.showMore = !recipe.showMore
+//   setShow(!show)
+// }
 
   return (
-    <div>
+    <div className="container">
       <div>
         <h1>УЖИНЫ НА НЕДЕЛЮ</h1>
       </div>
        {dinners.map((dinner => {
-        const { id, day, nameFood, image, recipe, showMore } = dinner;
+        const { id, day, nameFood, image, recipe } = dinner;
       return (
-        <div>
-          <div key={id}>
+        <div className="container">
+          <div key={id} className="container">
             <h2>{day}</h2>
             <h3>{nameFood}</h3>
           </div>
-          <div>
+          <div className="container">
             <img src={image} alt="food" width="400px"/>
           </div>
           <div>
-            <div>
-            <h4>рецепт</h4>
+           <br />
+            <div className="container">
+              <button onClick={()=> setShow(!show)}>{show ? "Скрыть рецепт" : "Показать рецепт"}</button>
             </div>
-            <div>
-              <button onClick={()=> showCarousel(dinner)}>Показать</button>
-            </div>
-            <div>
-              <Carousel recipe={show && recipe}/> 
+            <div className="container">
+              {show&& <Carousel recipe={recipe}/>}
             </div>
           </div>
          

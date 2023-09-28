@@ -26,7 +26,7 @@ function Carousel({ recipe }) {
     }
 
     return (
-        <div>
+        <div className="container">
 
             <div>
                 <h2> ШАГ {index + 1}</h2>
